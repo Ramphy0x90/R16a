@@ -1,0 +1,25 @@
+<div class="main-container page-container">
+        <div id="home" class="header-container section">
+            <div class="title">
+                <div>Crafting Your</div>
+                <div>Digital Future</div>
+            </div>
+
+            <div class="sub-title">
+                Innovative solutions in web development, custom web applications, softwares and security services
+            </div>
+
+            <div class="explore-btn">
+                <button>Explore our services</button>
+            </div>
+        </div>
+
+        <div id="services" class="services-container section">
+            @for(service of services; track service.title) {
+                <app-service-card [icon]="service.icon"
+                                    [title]="service.title"
+                                    [description]="service.description">
+                </app-service-card>
+            }
+        </div>
+</div>

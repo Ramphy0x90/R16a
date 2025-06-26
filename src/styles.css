@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --color-black: #000000;
+    --color-white: #E9ECEF;
+    --color-gray: #b0b0b0;
+    --color-blue: #5b24ffff;
+    --color-purple: #be10e0ff;
+
+    --space-1: 5px;
+    --space-2: 10px;
+    --space-3: 20px;
+    --space-4: 40px;
+
+    --nav-bar-height: 56px;
+    --body-full-h: calc(100vh - var(--nav-bar-height));
+}
+
+* {
+    box-sizing: border-box;
+    transition: all 122ms linear;
+}
+
+html,
+body {
+    margin: 0 !important;
+    height: 100%;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+body {
+    background-color: var(--color-black) !important;
+    background-image: url('./assets/images/bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
