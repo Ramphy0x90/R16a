@@ -15,6 +15,5 @@ export const NAV_BAR_ROUTES: readonly NavBar[] = [
 ];
 
 export const routes: Routes = [
-    { path: "", pathMatch: "full", redirectTo: "home" },
-    { path: ROUTES.HOME, component: HomeComponent }
+    { path: '', component: HomeComponent, pathMatch: 'full' }
 ];

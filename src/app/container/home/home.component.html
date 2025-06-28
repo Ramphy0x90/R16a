@@ -10,7 +10,10 @@
             </div>
 
             <div class="explore-btn">
-                <button>Explore our services</button>
+                <button [routerLink]="['/']"
+                        [fragment]="'services'">
+                        Explore our services
+                </button>
             </div>
         </div>
 
@@ -21,5 +24,22 @@
                                     [description]="service.description">
                 </app-service-card>
             }
+        </div>
+
+        <div id="contact" class="contact-container section">
+            <div class="contact-card">
+                <div class="header">Contact info</div>
+                <div class="info-container">
+                    <div class="opt-0">
+                        <div class="icon-container">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <div class="meta-container">
+                            <label>Email</label>
+                            <div>ramphy_an&#64;outlook.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 </div>

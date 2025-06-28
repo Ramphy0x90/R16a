@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { ServiceCardComponent } from "../../components/service-card/service-card.component";
 import { Service } from '../../types/service';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-home',
     standalone: true,
-    imports: [ServiceCardComponent],
+    imports: [ServiceCardComponent, RouterLink],
     templateUrl: './home.component.html',
     styleUrl: './home.component.css'
 })
