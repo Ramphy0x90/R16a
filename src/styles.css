@@ -1,9 +1,12 @@
 :root {
     --color-black: #000000;
+    --color-dark: #060810;
+    --color-dark-1: #0a0f1a;
     --color-white: #E9ECEF;
     --color-gray: #b0b0b0;
-    --color-blue: #5b24ffff;
-    --color-purple: #be10e0ff;
+    --color-gray-1: #1c1c1c;
+    --color-blue: #5b24ff;
+    --color-purple: #be10e0;
 
     --space-1: 5px;
     --space-2: 10px;
@@ -12,6 +15,10 @@
 
     --nav-bar-height: 56px;
     --body-full-h: calc(100vh - var(--nav-bar-height));
+
+    --gradient-primary: linear-gradient(135deg, var(--color-blue) 0%, var(--color-purple) 100%);
+    --shadow-glow: 0 0 40px hsl(217 91% 60% / .3);
+    --shadow-card: 0 8px 32px hsl(222 47% 4% / .4);
 }
 
 * {
@@ -25,6 +32,11 @@ body {
     height: 100%;
     font-family: sans-serif;
     scroll-behavior: smooth;
+    background-color: var(--color-black) !important;
+}
+
+a {
+    text-decoration: none !important;
 }
 
 h1,
@@ -36,12 +48,11 @@ h6 {
     margin: 0;
 }
 
-body {
-    background-color: var(--color-black) !important;
-    background-image: url('./assets/images/bg.svg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+button {
+    border: none !important;
+    padding: var(--space-2) var(--space-4) !important;
+    border-radius: 10px !important;
+    cursor: pointer !important;
 }
 
 .page-container {

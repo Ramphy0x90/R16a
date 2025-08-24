@@ -1,34 +1,49 @@
 .main-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr auto;
-    align-items: center;
-    max-width: 350px;
+    align-items: start;
+    max-width: 450px;
     color: var(--color-white);
-    aspect-ratio: 3/1.5;
-    border-radius: 5px;
+    aspect-ratio: 2/1.4;
+    border-radius: 10px;
     padding: var(--space-3);
+    background-color: var(--color-dark-1);
+    border: 1px solid var(--color-gray-1);
+    gap: 15px;
 }
 
-.main-container .icon-container {
-    font-size: 38px;
+.main-container .header-container {
+    align-items: center;
+    gap: 15px;
 }
 
-.main-container .title-container {
+.header-container .title {
     font-weight: bold;
+    font-size: 20px;
+}
+
+.header-container .icon-container {
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-blue);
+    font-size: 25px;
+    border-radius: 12px;
+    width: 50px;
+    aspect-ratio: 1/1;
 }
 
 .main-container .description-container {
-    font-size: 13px;
+    font-size: 16px;
     color: var(--color-gray);
+    text-align: start;
 }
 
-@media screen and (min-width: 750px) {
-    .main-container .icon-container {
-        font-size: 52px;
-    }
-
-    .main-container .description-container {
-        font-size: 16px;
-    }
+.main-container .technologies-container {
+    color: var(--color-gray);
+    text-align: left;
 }
+
+
+.technologies-container ul li::marker {
+    color: var(--color-blue);
+}
+
+@media screen and (min-width: 750px) {}

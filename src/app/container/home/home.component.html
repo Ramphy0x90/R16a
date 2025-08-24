@@ -1,42 +1,75 @@
 <div class="main-container page-container">
         <div id="home" class="header-container section">
-            <div class="title">
-                <div>Crafting Your</div>
-                <div>Digital Future</div>
-            </div>
+            <div class="d-flex flex-column content">
+                <div class="title">
+                    <div>Crafting Your</div>
+                    <div>Digital Future</div>
+                </div>
 
-            <div class="sub-title">
-                Innovative solutions in web development, custom web applications, softwares and security services
-            </div>
+                <div class="sub-title">
+                    Professional tech services for modern businesses. We deliver secure, scalable solutions for web hosting, application development, and cybersecurity.
+                </div>
 
-            <div class="explore-btn">
-                <button [routerLink]="['/']"
-                        [fragment]="'services'">
-                        Explore our services
-                </button>
+                <div class="intro-btns d-flex">
+                    <button [routerLink]="['/']"
+                            [fragment]="'services'">
+                            Explore Services
+                            <i class="bi bi-arrow-right"></i>
+                    </button>
+
+                    <button [routerLink]="['/']"
+                            [fragment]="'contact'">
+                        Get in Touch
+                    </button>
+                </div>
+
+                <div class="attributes-container d-flex">
+                    @for(attribute of attributes; track attribute.title) {
+                        <div class="attribute-box d-flex flex-column">
+                            <div class="title">{{attribute.title}}</div>
+                            <div class="sub-title">{{attribute.label}}</div>
+                        </div>
+                    }
+                </div>
             </div>
         </div>
 
         <div id="services" class="services-container section">
-            @for(service of services; track service.title) {
-                <app-service-card [icon]="service.icon"
-                                    [title]="service.title"
-                                    [description]="service.description">
-                </app-service-card>
-            }
+            <div class="d-flex flex-column content">
+                <div class="header">
+                    <div class="title">Our Services</div>
+                    <div class="sub-title">Comprehensive tech solutions tailored to your business needs</div>
+                </div>
+
+                <div class="d-flex cards-container">
+                    @for(service of services; track service.title) {
+                        <app-service-card [icon]="service.icon"
+                                            [title]="service.title"
+                                            [description]="service.description"
+                                            [technologies]="service.technologies">
+                        </app-service-card>
+                    }
+                </div>
+            </div>
         </div>
 
         <div id="contact" class="contact-container section">
-            <div class="contact-card">
-                <div class="header">Contact info</div>
-                <div class="info-container">
-                    <div class="opt-0">
-                        <div class="icon-container">
-                            <i class="bi bi-envelope"></i>
-                        </div>
-                        <div class="meta-container">
-                            <label>Email</label>
-                            <div>ramphy_an&#64;outlook.com</div>
+            <div class="d-flex flex-column content">
+                <div class="header">
+                    <div class="title">Ready to Start Your Project?</div>
+                    <div class="sub-title">Let's discuss how we can help bring your ideas to life with secure, scalable technology solutions.</div>
+                </div>
+
+                <div class="d-flex flex-column contact-card">
+                    <div class="d-flex icon-container">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+
+                    <div class="d-flex flex-column info-container">
+                        <div class="title">Get in Touch</div>
+                        <div class="sub-title">Ready to start your project? Send me an email:</div>
+                        <div class="email">
+                            <a href="mailto:contact@r16a.ch">contact&#64;r16a.ch</a>
                         </div>
                     </div>
                 </div>

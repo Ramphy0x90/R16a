@@ -1,8 +1,19 @@
-<div class="main-container">
-    <div class="icon-container">
-        <i [class]="'bi ' + icon"></i>
+<div class="d-flex flex-column main-container">
+    <div class="header-container d-flex">
+        <div class="icon-container d-flex">
+            <i [class]="'bi ' + icon"></i>
+        </div>
+
+        <div class="title">{{title}}</div>
     </div>
-    
-    <div class="title-container">{{title}}</div>
+
     <div class="description-container">{{description}}</div>
+
+    <div class="technologies-container d-flex flex-column">
+        <ul>
+            @for(tech of technologies; track tech) {
+                <li>{{tech}}</li>
+            }
+        </ul>
+    </div>
 </div>

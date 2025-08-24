@@ -11,4 +11,5 @@ export class ServiceCardComponent {
     @Input() icon?: string;
     @Input() title?: string;
     @Input() description?: string;
+    @Input() technologies: string[] = [];
 }

@@ -6,7 +6,7 @@
     position: fixed;
     width: 100%;
     height: calc(var(--nav-bar-height) - 1px);
-    background-color: #00000054 !important;
+    background-color: #0000003b !important;
     color: var(--color-white) !important;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);

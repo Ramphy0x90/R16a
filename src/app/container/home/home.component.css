@@ -5,10 +5,54 @@
     align-items: center;
     text-align: center;
     width: 100%;
-    height: var(--body-full-h);
+    min-height: var(--body-full-h);
     gap: var(--space-3);
     padding: var(--space-3);
 }
+
+.section .content {
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.section .content .header {
+    color: var(--color-white);
+}
+
+.section .content .title {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.section .content .sub-title {
+    font-size: 16px;
+}
+
+.header-container {
+    background-color: var(--color-black);
+    background-image: url('../../../assets/images/bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.services-container {
+    background-color: var(--color-black);
+    background-image: url('../../../assets/images/bg_1.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.contact-container {
+    background-color: var(--color-black);
+    background-image: url('../../../assets/images/bg_2.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 
 .header-container .title {
     font-size: 32px;
@@ -26,78 +70,85 @@
 
 .header-container .sub-title {
     max-width: 800px;
-    font-size: 13px;
+    font-size: 15px;
     color: var(--color-gray);
 }
 
-.header-container .explore-btn button {
-    background-color: var(--color-blue);
+.header-container .intro-btns {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.header-container .intro-btns button {
     color: var(--color-white);
-    border: none;
-    padding: var(--space-1) var(--space-2);
-    border-radius: 5px;
-    cursor: pointer;
 }
 
-.services-container app-service-card:nth-child(1) ::ng-deep .main-container {
-    background-image: url('../../../assets/images/s_bg_0.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
+.header-container .intro-btns button:nth-child(1) {
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    box-shadow: var(--shadow-glow);
 }
 
-.services-container app-service-card:nth-child(2) ::ng-deep .main-container {
-    background-image: url('../../../assets/images/s_bg_1.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
+.header-container .intro-btns button:nth-child(2) {
+    background: var(--color-dark);
+    color: var(--color-white);
+    border: 1px solid var(--color-gray) !important;
 }
 
-.services-container app-service-card:nth-child(3) ::ng-deep .main-container {
-    background-image: url('../../../assets/images/s_bg_2.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
+.attributes-container {
+    width: 80%;
+    gap: 15px;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.attributes-container .attribute-box .title {
+    font-size: 22px;
+    line-height: 22px;
+    color: var(--color-blue);
+}
+
+.attributes-container .attribute-box .sub-title {
+    font-size: 15px;
+}
+
+.services-container .content {
+    gap: 35px;
+}
+
+.services-container .cards-container {
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .contact-container .contact-card {
     width: 100%;
     max-width: 450px;
-    border-radius: 5px;
-    height: 120px;
-}
-
-.contact-container .contact-card .header {
-    color: var(--color-white);
-    background-color: var(--color-blue);
-    padding: var(--space-3);
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.contact-container .contact-card .info-container {
-    display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--color-blue);
-    height: 100%;
-    background-color: var(--color-gray);
-}
-
-.contact-container .contact-card .opt-0 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: var(--space-3);
+    border-radius: 10px;
+    border: 1px solid var(--color-gray-1);
+    height: 180px;
+    background-color: var(--color-dark-1);
+    color: var(--color-gray);
 }
 
 .contact-container .contact-card .icon-container {
+    width: 50px;
+    aspect-ratio: 1 / 1;
+    justify-content: center;
+    align-items: center;
     font-size: 30px;
+    color: var(--color-white);
+    background-color: var(--color-blue);
+    border-radius: 100%;
 }
 
-.contact-container .contact-card .meta-container {
-    text-align: start;
-}
-
-.contact-container .contact-card .meta-container label {
-    font-weight: bold;
+.contact-card .email {
+    color: var(--color-blue);
 }
 
 @media screen and (min-width: 750px) {
@@ -105,8 +156,8 @@
         gap: var(--space-4);
     }
 
-    .header-container .title {
-        font-size: 52px;
+    .header-container .content .title {
+        font-size: 50px;
         line-height: 62px;
     }
 
@@ -114,13 +165,35 @@
         font-size: 23px;
     }
 
-    .header-container .explore-btn button {
+    .header-container .intro-btns {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .header-container .intro-btns button {
         font-size: 18px;
         padding: var(--space-2) var(--space-3);
     }
 
     .main-container .services-container {
         flex-direction: row;
+    }
+
+    .services-container .cards-container {
+        flex-direction: row;
+    }
+
+    .attributes-container .attribute-box {
+        line-height: 0;
+    }
+
+    .attributes-container .attribute-box .title {
+        font-size: 22px;
+        line-height: 48px;
+    }
+
+    .attributes-container .attribute-box .sub-title {
+        font-size: 15px;
     }
 }
 
