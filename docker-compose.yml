@@ -1,0 +1,23 @@
+version: "3.9"
+
+networks:
+  traefik-network:
+    external: true
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        NG_BUILD_CONFIGURATION: development
+    container_name: koios-frontend
+    networks:
+      - traefik-network
+    depends_on:
+      - backend
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.koios-frontend.rule=Host(`r16a.ch`)"
+      - "traefik.http.routers.koios-frontend.entrypoints=websecure"
+      - "traefik.http.routers.koios-frontend.tls.certresolver=letsencrypt"
