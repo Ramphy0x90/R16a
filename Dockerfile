@@ -1,23 +1,31 @@
-FROM node:18-bullseye AS build
+# Multi-stage build for Angular application
+FROM node:20-alpine AS build
+
+# Set working directory
 WORKDIR /app
 
-# Install dependencies
+# Copy package files
 COPY package*.json ./
+
+# Install dependencies (include dev dependencies for build)
 RUN npm ci
 
-# Copy source and build
+# Copy source code
 COPY . .
-ARG NG_BUILD_CONFIGURATION=production
-ENV NG_BUILD_CONFIGURATION=${NG_BUILD_CONFIGURATION}
-RUN if [ "$NG_BUILD_CONFIGURATION" = "production" ]; then npm run build-prod; else npm run build; fi
 
-# Runtime image
-FROM nginx:1.25-alpine
+# Build the application
+RUN npm run build
 
-# Nginx config
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+# Production stage with nginx
+FROM nginx:alpine
 
-# Copy built app
 COPY --from=build /app/dist/r16a/browser /usr/share/nginx/html
 
+# Copy nginx configuration (Traefik terminates TLS; Nginx serves HTTP)
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Expose port
 EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
