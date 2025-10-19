@@ -11,11 +11,11 @@ services:
       dockerfile: ./Dockerfile
       args:
         NG_BUILD_CONFIGURATION: development
-    container_name: koios-frontend
+    container_name: R16a-frontend
     networks:
       - traefik-network
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.koios-frontend.rule=Host(`r16a.ch`)"
-      - "traefik.http.routers.koios-frontend.entrypoints=websecure"
-      - "traefik.http.routers.koios-frontend.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.r16a-frontend.rule=Host(`r16a.ch`)"
+      - "traefik.http.routers.r16a-frontend.entrypoints=websecure"
+      - "traefik.http.routers.r16a-frontend.tls.certresolver=letsencrypt"
