@@ -10,7 +10,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
       args:
-        NG_BUILD_CONFIGURATION: development
+        NG_BUILD_CONFIGURATION: production
     container_name: R16a-frontend
     networks:
       - traefik-network
@@ -19,3 +19,4 @@ services:
       - "traefik.http.routers.r16a-frontend.rule=Host(`r16a.ch`)"
       - "traefik.http.routers.r16a-frontend.entrypoints=websecure"
       - "traefik.http.routers.r16a-frontend.tls.certresolver=letsencrypt"
+      - "traefik.http.services.r16a-frontend.loadbalancer.server.port=80"

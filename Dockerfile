@@ -13,8 +13,11 @@ RUN npm ci
 # Copy source code
 COPY . .
 
+# Accept build configuration argument
+ARG NG_BUILD_CONFIGURATION=production
+
 # Build the application
-RUN npm run build
+RUN npm run build -- --configuration=${NG_BUILD_CONFIGURATION}
 
 # Production stage with nginx
 FROM nginx:alpine
