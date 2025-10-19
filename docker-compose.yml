@@ -11,7 +11,7 @@ services:
       dockerfile: ./Dockerfile
       args:
         NG_BUILD_CONFIGURATION: production
-    container_name: R16a-frontend
+    container_name: r16a-frontend
     networks:
       - traefik-network
     labels:
