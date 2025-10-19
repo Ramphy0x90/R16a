@@ -14,8 +14,6 @@ services:
     container_name: koios-frontend
     networks:
       - traefik-network
-    depends_on:
-      - backend
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.koios-frontend.rule=Host(`r16a.ch`)"
