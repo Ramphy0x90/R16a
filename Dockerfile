@@ -15,7 +15,7 @@ RUN if [ "$NG_BUILD_CONFIGURATION" = "production" ]; then npm run build-prod; el
 FROM nginx:1.25-alpine
 
 # Nginx config
-COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copy built app
 COPY --from=build /app/dist/r16a /usr/share/nginx/html
